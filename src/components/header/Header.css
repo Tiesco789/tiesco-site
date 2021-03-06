@@ -1,0 +1,32 @@
+@import '../../styles/App.css';
+
+.header {
+  background-color: var(--bg-color);
+  width: 100%;
+}
+  
+.header .menu-header {
+  width: 100%;
+}
+
+.header .menu-header .links-header {
+  display: flex;
+  justify-content: center;
+}
+
+.header .menu-header .links-header .link {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  padding: 20px;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing);
+  transition: .2s;
+  color: white;
+  height: 80px;
+}
+
+.header .menu-header .links-header .link:hover {
+  background-color: var(--color-hover);
+}
+

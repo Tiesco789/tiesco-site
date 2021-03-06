@@ -1,0 +1,97 @@
+.section-contato {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.section-contato h1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: #222;
+  padding-top: 1.563rem;
+  font-size: 25pt;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  padding-bottom: 1.563rem;
+  margin-bottom: 1.563rem;
+}
+
+.section-contato h1::after {
+  content: "";
+  display: block;
+  width: 250px;
+  height: 1px;
+  background: var(--bg-color);
+  margin: 8px auto;
+}
+
+.section-contato .form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section-contato .form input:-webkit-autofill,
+.section-contato .form input:-webkit-autofill:hover, 
+.section-contato .form input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #FFF;
+  box-shadow: 0 0 0 0.188rem var(--color-hover);
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.section-contato .form input {
+  width: 400px;
+  margin: 5px;
+  outline: none;
+  border: none;
+  background-color: var(--bg-color);
+  color: #FFF;
+  padding: 15px 25px;
+  border-radius: 5px;
+  transition: .2s;
+}
+
+.section-contato .form input:focus {
+  box-shadow: 0 0 0 0.188rem var(--color-hover);
+}
+
+.section-contato textarea {
+  resize: none;
+  width: 400px;
+  margin: 5px;
+  outline: none;
+  border: none;
+  background-color: var(--bg-color);
+  color: #FFF;
+  padding: 15px 25px;
+  border-radius: 5px;
+  transition: .2s;
+}
+
+.section-contato textarea:focus {
+  box-shadow: 0 0 0 0.188rem var(--color-hover);
+}
+
+.section-contato .btn {
+    margin: 25px;
+    padding: 0.938rem 1.25rem;
+    outline: none;
+    border: none;
+    border-radius: 0.625rem;
+    cursor: pointer;
+    background-color: var(--bg-color);
+    letter-spacing: var(--letter-spacing);
+    color: #FFF;
+    transition: .2s;
+}
+.section-contato .btn:hover {
+  background-color: var(--color-hover);
+}

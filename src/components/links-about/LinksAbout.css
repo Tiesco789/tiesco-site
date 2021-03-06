@@ -1,0 +1,66 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url('../../assets/bg.jpg') no-repeat center;
+  height: 70vh;
+  width: 100%;  
+}
+
+.about .text-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about .text-section .title-section {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #FFF;
+  margin: 0 auto;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing);
+}
+    
+.about .text-section .p-about {
+  padding: 15px;
+  flex-direction: column;
+  color: #FFF;
+  margin: 0 auto;
+  font-size: 1.25rem;
+}
+
+.about .links-about {
+  display: inline;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about .links-about:before {
+  content: "";
+  width: 250px;
+  height: 1px;
+  background: #fff;
+  margin: 25px auto;
+}
+    
+.about .links-about .links {
+  display: flex;
+  flex-direction: row;
+}
+
+.about .links-about .links .link-about {
+  text-decoration: none;
+  color: #FFF;
+  padding: 0.625rem;
+  transition: .2s;
+}
+
+.about .links-about .links .link-about:hover {
+  color: var(--color-hover);
+}
