@@ -18,14 +18,18 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+$accent-color: #7353c5;
+$bg-btn-color: rgba(110, 89, 165, 0.06);
+
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
   padding: 1.5rem 3rem;
-  background-color: white;
-  box-shadow: 0 0 25px 0 rgb(249, 249, 252);
+  background-color: #171717;
+  border: 1px solid rgb(44, 44, 44);
+  border-radius: .5rem;
 
   .links-container {
     display: flex;
@@ -35,11 +39,14 @@ export default {
     .link {
       a {
         text-decoration: none;
-        margin-left: 2rem;
-        color: #242424;
-        
+        color: #a3a3a3;
+        padding: 16px 24px;
+        border-radius: 8px;
+        transition: all .2s ease-in-out;
+
         &:hover {
-          background-color: color.adjust(#6e59a5, $lightness: 30%);
+          color: $accent-color;
+          background-color: $bg-btn-color;
         }
       }
     }
