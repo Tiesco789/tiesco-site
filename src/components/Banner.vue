@@ -1,17 +1,41 @@
 <script lang="ts">
-export default {
-  name: 'Banner'
-}
+import { computed, defineComponent, onMounted, ref } from 'vue';
+import api from '../utils/api';
+
+export default defineComponent({
+  name: 'Banner',
+  setup() {
+    const userData = ref<any>(null);
+    const fetchGitHubUser = async () => {
+      try {
+        const response = await api.get('users/Tiesco789');
+        userData.value = response.data;
+      } catch (error) {
+        console.error(`Ops, aconteceu alguma coisa: ${error}`);
+      }
+    };
+
+    onMounted(fetchGitHubUser);
+
+    return { userData };
+  }
+})
+
 </script>
 
 <template>
   <div class="banner-container">
     <div class="texts">
       <span>Welcome</span>
-      <h1>Hi, I am <strong>Franccesco Bordon</strong> A passionate developer crafting beautiful digital experiences</h1>
+      <h1>Hi, I am <strong>{{ userData?.name }}</strong> A passionate developer crafting beautiful digital experiences</h1>
+      <span>{{ userData?.bio }}</span>
     </div>
 
-    <img src="" alt="illustration/pixture">
+    <img v-if="userData?.avatar_url" :src="userData.avatar_url" :alt="userData.login" class="avatar" />
+
+    <div v-if="userData?.login" class="info">
+      <p><strong>GitHub:</strong> {{ userData.login }}</p>
+    </div>
   </div>
 </template>
 
@@ -45,5 +69,11 @@ export default {
       }
     }
   }
+}
+
+.avatar {
+  width: 100px;
+  border-radius: 50%;
+  margin-top: 20px;
 }
 </style>

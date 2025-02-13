@@ -1,17 +1,34 @@
 <script lang="ts">
+import { defineComponent, onMounted, ref } from 'vue';
+import api from '../utils/api';
 
-export default {
-  name: 'Header'
-}
+export default defineComponent({
+  name: 'Header',
+    setup() {
+    const userData = ref<any>(null);
+    const fetchGitHubUser = async () => {
+      try {
+        const response = await api.get('users/Tiesco789');
+        userData.value = response.data;
+      } catch (error) {
+        console.error(`Ops, aconteceu alguma coisa: ${error}`);
+      }
+    };
+
+    onMounted(fetchGitHubUser);
+
+    return { userData };
+  }
+})
 </script>
 
 <template>
   <div class="header-container">
     <div class="links-container">
-      <a class="link" href=""><i class="ri-linkedin-fill"></i></a>
+      <a class="link" :href="userData?.blog"><i class="ri-linkedin-fill"></i></a>
       <a class="link" href=""><i class="ri-discord-fill"></i></a>
       <a class="link" href=""><i class="ri-mail-send-fill"></i></a>
-      <a class="link" href=""><i class="ri-github-fill"></i></a>
+      <a class="link" :href="userData?.html_url"><i class="ri-github-fill"></i></a>
     </div>
 
     <div class="btn-dark-mode">
