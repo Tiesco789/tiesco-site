@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Repositórios Selecionados</h2>
+    <h2>Some Projects</h2>
     <div v-if="loading">Carregando...</div>
     <div v-if="error" class="error">{{ error }}</div>
 
@@ -8,10 +8,13 @@
       <li v-for="repo in repos" :key="repo.id">
         <a :href="repo.html_url" target="_blank" rel="noopener noreferrer">
           <strong>{{ repo.name }}</strong>
+          <i class="ri-external-link-line"></i>
         </a>
-        <p>{{ repo.description || "Sem descrição" }}</p>
-        <span><i class="ri-star-fill"></i> {{ repo.stargazers_count }} Stars</span>
-        <span><i class="ri-git-fork-line"></i> {{ repo.forks_count }} Forks</span>
+        <p>{{ repo.description || "-" }}</p>
+        <div>
+          <span><i class="ri-star-fill"></i> {{ repo.stargazers_count }} Stars</span>
+          <span><i class="ri-git-fork-line"></i> {{ repo.forks_count }} Forks</span>
+        </div>
       </li>
     </ul>
   </div>
@@ -52,4 +55,49 @@ export default defineComponent({
 });
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+h2 {
+  color: white;
+  margin-bottom: 2rem;
+}
+
+ul {
+  li {
+    list-style-type: none;
+    margin-bottom: 1rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+    &:not(:last-child)::after {
+      content: "";
+      display: block;
+      margin-top: 1rem;
+      border-bottom: 1px solid rgb(44, 44, 44);
+    }
+
+    span {
+      margin-right: 1rem
+    }
+
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+
+      strong {
+        color: #7353c5;
+        margin-right: 0.5rem;
+      }
+
+      i {
+        color: #7353c5
+      }
+    }
+
+    p {
+      font-style: italic;
+    }
+  }
+}
+</style>

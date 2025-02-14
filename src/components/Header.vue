@@ -4,7 +4,7 @@ import api from '../utils/api';
 
 export default defineComponent({
   name: 'Header',
-    setup() {
+  setup() {
     const userData = ref<any>(null);
     const fetchGitHubUser = async () => {
       try {
@@ -31,14 +31,7 @@ export default defineComponent({
       <a class="link" :href="userData?.html_url"><i class="ri-github-fill"></i></a>
     </div>
 
-    <div class="btn-dark-mode">
-      <i class="icon ri-sun-fill"></i>
-      <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
-      </label>
-      <i class="icon ri-moon-clear-fill"></i>
-    </div>
+    <button class="btn-download">Download CV <i class="ri-download-2-fill"></i></button>
   </div>
 </template>
 
@@ -51,7 +44,7 @@ $bg-btn-color: rgba(110, 89, 165, 0.06);
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
-  padding: 1.5rem 3rem;
+  padding: 1rem 2rem;
   background-color: #171717;
   border: 1px solid rgb(44, 44, 44);
   border-radius: .5rem;
@@ -80,73 +73,24 @@ $bg-btn-color: rgba(110, 89, 165, 0.06);
     }
   }
 
-  .btn-dark-mode {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  .btn-download {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 16px 24px;
+    border-radius: 8px;
+    transition: all .2s ease-in-out;
+    background-color: $accent-color;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
 
-    .icon {
-      font-size: 1.25rem;
-      color: #a3a3a3;
+    &:hover {
+      background-color: #513794;
     }
 
-    .switch {
-      position: relative;
-      display: inline-block;
-      width: 60px;
-      height: 34px;
-    }
-
-    .switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #ccc;
-      -webkit-transition: .4s;
-      transition: .4s;
-    }
-
-    .slider:before {
-      position: absolute;
-      content: "";
-      height: 26px;
-      width: 26px;
-      left: 4px;
-      bottom: 4px;
-      background-color: white;
-      -webkit-transition: .4s;
-      transition: .4s;
-    }
-
-    input:checked+.slider {
-      background-color: #7353c5;
-    }
-
-    input:focus+.slider {
-      box-shadow: 0 0 1px #7353c5;
-    }
-
-    input:checked+.slider:before {
-      -webkit-transform: translateX(26px);
-      -ms-transform: translateX(26px);
-      transform: translateX(26px);
-    }
-
-    .slider.round {
-      border-radius: 34px;
-    }
-
-    .slider.round:before {
-      border-radius: 50%;
+    i {
+      font-size: 1.5rem;
     }
   }
 }
