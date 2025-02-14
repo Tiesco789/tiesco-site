@@ -55,6 +55,7 @@ $bg-btn-color: rgba(110, 89, 165, 0.06);
   background-color: #171717;
   border: 1px solid rgb(44, 44, 44);
   border-radius: .5rem;
+  margin-bottom: 1rem;
 
   .links-container {
     display: flex;
