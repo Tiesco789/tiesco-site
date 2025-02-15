@@ -58,22 +58,24 @@ export default defineComponent({
 <style lang="scss" scoped>
 h2 {
   color: white;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 ul {
   li {
     list-style-type: none;
-    margin-bottom: 1rem;
     color: white;
     display: flex;
     flex-direction: column;
     align-self: center;
 
     &:not(:last-child)::after {
+    }
+
+    &:not(:last-child)::after {
       content: "";
       display: block;
-      margin-top: 1rem;
+      margin: 2rem 0;
       border-bottom: 1px solid rgb(44, 44, 44);
     }
 
@@ -97,6 +99,8 @@ ul {
 
     p {
       font-style: italic;
+      margin: 0.5rem 0;
+      font-size: 0.875rem;
     }
   }
 }

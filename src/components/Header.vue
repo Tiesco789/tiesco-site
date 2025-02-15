@@ -1,9 +1,38 @@
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue';
 import api from '../utils/api';
+import axios from 'axios';
 
 export default defineComponent({
   name: 'Header',
+
+  methods: {
+    downloadFile() {
+      axios({
+        url: 'http://localhost:5173/public/storage/Franccesco-Bordon-CV.pdf',
+        method: 'GET',
+        responseType: 'blob',
+      })
+        .then((response) => {
+          const fileURL = window.URL.createObjectURL(new Blob([response.data]));
+
+          const fileLink = document.createElement('a');
+          fileLink.href = fileURL;
+
+          fileLink.setAttribute('download', 'Franccesco-Bordon-CV.pdf');
+
+          document.body.appendChild(fileLink);
+
+          fileLink.click();
+
+          document.body.removeChild(fileLink);
+        })
+        .catch((error) => {
+          console.error('Ocorreu um erro ao baixar o arquivo:', error);
+        });
+    },
+  },
+
   setup() {
     const userData = ref<any>(null);
     const fetchGitHubUser = async () => {
@@ -25,13 +54,13 @@ export default defineComponent({
 <template>
   <div class="header-container">
     <div class="links-container">
-      <a class="link" :href="userData?.blog"><i class="ri-linkedin-fill"></i></a>
-      <a class="link" href=""><i class="ri-discord-fill"></i></a>
-      <a class="link" href=""><i class="ri-mail-send-fill"></i></a>
-      <a class="link" :href="userData?.html_url"><i class="ri-github-fill"></i></a>
+      <a target="_blank" class="link" :href="userData?.blog"><i class="ri-linkedin-fill"></i></a>
+      <a target="_blank" class="link" href=""><i class="ri-discord-fill"></i></a>
+      <a target="_blank" class="link" href="mailto:franccesco_@hotmail.com"><i class="ri-mail-send-fill"></i></a>
+      <a target="_blank" class="link" :href="userData?.html_url"><i class="ri-github-fill"></i></a>
     </div>
 
-    <button class="btn-download">Download CV <i class="ri-download-2-fill"></i></button>
+    <button @click="downloadFile()" class="btn-download">Download CV <i class="ri-download-2-fill"></i></button>
   </div>
 </template>
 

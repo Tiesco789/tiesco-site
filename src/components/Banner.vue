@@ -8,10 +8,7 @@
     <div class="texts banner-container">
       <div>
         <h5>
-          Hi, I am <strong>{{ userData?.name }}</strong>, I'm a Front-End Developer <strong>HTML, CSS &
-            JavaScript</strong>, I don't have a favorite framework, I like them all, but at the moment I'm studying
-          <strong>PHP/Laravel & VueJS</strong> and I've really enjoyed it, especially for creating more powerful
-          applications.
+          Hi, I am <strong>{{ userData?.name }}</strong>, I work as Full-Stack Developer <strong>HTML, CSS & JavaScript</strong>, at the moment I'm studying <strong>PHP/Laravel & VueJS</strong> and I've really enjoyed it, especially for creating more powerful applications.
         </h5>
       </div>
     </div>
@@ -24,15 +21,15 @@
         <li><img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg" alt=""></li>
         <li><img src="https://www.vectorlogo.zone/logos/w3_css/w3_css-icon~old.svg" alt=""></li>
         <li><img src="https://www.vectorlogo.zone/logos/javascript/javascript-icon.svg" alt=""></li>
+        <li><img src="https://www.vectorlogo.zone/logos/vuejs/vuejs-icon.svg" alt=""></li>
         <li><img src="https://www.vectorlogo.zone/logos/php/php-icon.svg" alt=""></li>
         <li><img src="https://www.vectorlogo.zone/logos/laravel/laravel-icon.svg" alt=""></li>
-        <li><img src="https://www.vectorlogo.zone/logos/java/java-icon.svg" alt=""></li>
-        <li><img src="https://www.vectorlogo.zone/logos/vuejs/vuejs-icon.svg" alt=""></li>
-        <li><img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt=""></li>
-        <li><img src="https://www.vectorlogo.zone/logos/linux/linux-icon.svg" alt=""></li>
-        <li><img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt=""></li>
         <li><img src="https://www.vectorlogo.zone/logos/postgresql/postgresql-icon.svg" alt=""></li>
-        <li><img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt=""></li>
+        <li><img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt=""></li>
+        <!-- <li><img src="https://www.vectorlogo.zone/logos/java/java-icon.svg" alt=""></li> -->
+        <!-- <li><img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt=""></li> -->
+        <!-- <li><img src="https://www.vectorlogo.zone/logos/linux/linux-icon.svg" alt=""></li> -->
+        <!-- <li><img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt=""></li> -->
       </ul>
     </div>
 
@@ -109,12 +106,13 @@ export default defineComponent({
     a {
       display: flex;
       justify-content: center;
-      
+
       img {
         padding: .5rem 1rem;
         background-color: #fae661;
         height: 100%;
         border-radius: .5rem;
+        height: 3.2rem;
       }
     }
   }
@@ -201,17 +199,19 @@ export default defineComponent({
   .texts {
     span {
       color: #737373;
-      font-weight: 600;
-      font-size: 0.875rem;
     }
 
     div {
       font-size: 1.25rem;
       color: rgb(238, 238, 238);
-      font-weight: 300;
+      line-height: 1.5rem;
 
-      strong {
-        color: #7353c5;
+      h5 {
+      font-weight: normal;
+
+        strong {
+          color: #7353c5;
+        }
       }
     }
   }
