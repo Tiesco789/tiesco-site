@@ -8,7 +8,9 @@
     <div class="texts banner-container">
       <div>
         <h5>
-          Hi, I am <strong>{{ userData?.name }}</strong>, I work as Full-Stack Developer <strong>HTML, CSS & JavaScript</strong>, at the moment I'm studying <strong>PHP/Laravel & VueJS</strong> and I've really enjoyed it, especially for creating more powerful applications.
+          Hi, I am <strong>{{ userData?.name }}</strong>, I work as Full-Stack Developer <strong>HTML, CSS &
+            JavaScript</strong>, at the moment I'm studying <strong>PHP/Laravel & VueJS</strong> and I've really enjoyed
+          it, especially for creating more powerful applications.
         </h5>
       </div>
     </div>
@@ -18,6 +20,7 @@
     <div class="skills banner-container">
       <h2>Skills</h2>
       <ul class="skill-list">
+        <li><img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt=""></li>
         <li><img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg" alt=""></li>
         <li><img src="https://www.vectorlogo.zone/logos/w3_css/w3_css-icon~old.svg" alt=""></li>
         <li><img src="https://www.vectorlogo.zone/logos/javascript/javascript-icon.svg" alt=""></li>
@@ -25,29 +28,56 @@
         <li><img src="https://www.vectorlogo.zone/logos/php/php-icon.svg" alt=""></li>
         <li><img src="https://www.vectorlogo.zone/logos/laravel/laravel-icon.svg" alt=""></li>
         <li><img src="https://www.vectorlogo.zone/logos/postgresql/postgresql-icon.svg" alt=""></li>
-        <li><img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt=""></li>
-        <!-- <li><img src="https://www.vectorlogo.zone/logos/java/java-icon.svg" alt=""></li> -->
-        <!-- <li><img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt=""></li> -->
-        <!-- <li><img src="https://www.vectorlogo.zone/logos/linux/linux-icon.svg" alt=""></li> -->
-        <!-- <li><img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt=""></li> -->
       </ul>
     </div>
 
     <div class="form banner-container">
-      <h2>Let's talk</h2>
-      <form class="form-container">
-        <input type="text" placeholder="Your Name" />
-        <input type="email" placeholder="Your E-mail" />
-        <textarea placeholder="Message" rows="5" cols="13"></textarea>
+      <h2>Experience</h2>
+      <div class="experience-container">
 
-        <button type="submit">Send message <i class="ri-send-plane-fill"></i></button>
-      </form>
+        <!-- Logsmart -->
+        <div class="exp">
+          <div>
+            <h4>LogSmart</h4>
+            <small>August/2024 - Present</small>
+          </div>
+          <p>Dev Full-Stack Jr</p>
+        </div>
+
+
+        <!-- Copapel -->
+        <div class="exp">
+          <div>
+            <h4>Copapel</h4>
+            <small>March/2024 - August/2024</small>
+          </div>
+          <p>Web Designer</p>
+        </div>
+
+        <!-- FaceDigital -->
+        <div class="exp">
+          <div>
+            <h4>Face Digital</h4>
+            <small>Jan/2023 - Feb/2024</small>
+          </div>
+          <p>Web Designer</p>
+        </div>
+
+        <!-- Trackcash -->
+        <div class="exp">
+          <div>
+            <h4>Trackcash</h4>
+            <small>Oct/2020 - Oct/2022</small>
+          </div>
+          <p>Product Designer</p>
+        </div>
+      </div>
     </div>
 
     <div class="bmc banner-container">
-      <a href="buymeacoffee.com/tiesco">
-        <img src="https://www.vectorlogo.zone/logos/buymeacoffee/buymeacoffee-official.svg" alt="">
-      </a>
+      <p><i class="ri-map-pin-line"></i>Brazil - São José dos Campos, SP</p>
+      <p><i class="ri-discord-fill"></i>Tiesco</p>
+      <a href=""></a>
     </div>
   </div>
 </template>
@@ -60,6 +90,7 @@ import RepoProfile from "./RepoProfile.vue";
 export default defineComponent({
   components: { RepoProfile },
   name: "Banner",
+
   setup() {
     const userData = ref<any>(null);
 
@@ -104,8 +135,6 @@ export default defineComponent({
     grid-area: bmc;
 
     a {
-      display: flex;
-      justify-content: center;
 
       img {
         padding: .5rem 1rem;
@@ -146,42 +175,39 @@ export default defineComponent({
     grid-area: form;
     display: flex;
     flex-direction: column;
+    align-content: space-between;
+
 
     h2 {
       color: white;
       margin-bottom: 1rem;
     }
 
-    .form-container {
-      input,
-      textarea {
-        width: 100%;
-        margin-bottom: 0.5rem;
-        padding: 1rem;
-        border-radius: .5rem;
-        border: none;
-        background-color: #111111;
-        color: white;
-        font-size: 0.875rem;
+    .experience-container {
+      grid-area: form;
+      width: 100%;
 
-        &:focus {
-          outline: 1px solid #7353c5;
+      .exp {
+        margin-top: 0.875rem;
+        color: #7353c5;
+        font-weight: bold;
+
+        &:not(:last-child)::after {
+          content: "";
+          display: block;
+          margin: 0.875rem 0;
+          border-bottom: 1px solid #3f434b;
         }
-      }
 
-      button {
-        background: #7353c5;
-        margin-top: 1rem;
-        width: 100%;
-        font: 1.125rem sans-serif;
-        border: none;
-        padding: 1rem 0;
-        border-radius: .5rem;
-        color: white;
-        cursor: pointer;
+        div {
+          display: flex;
+          align-items: center;
+          margin-bottom: 0.5rem;
+          color: white;
 
-        &:hover {
-          background-color: #513794;
+          h4 {
+            margin-right: 1rem;
+          }
         }
       }
     }
@@ -190,10 +216,11 @@ export default defineComponent({
   .banner-container {
     align-items: start;
     padding: 1.5rem 2rem;
-    background-color: #171717;
-    border: 1px solid rgb(44, 44, 44);
+    border: 1px solid #3f434b;
     border-radius: 0.5rem;
     width: 25rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(5px);
   }
 
   .texts {
@@ -207,7 +234,7 @@ export default defineComponent({
       line-height: 1.5rem;
 
       h5 {
-      font-weight: normal;
+        font-weight: normal;
 
         strong {
           color: #7353c5;

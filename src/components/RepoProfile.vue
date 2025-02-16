@@ -70,13 +70,10 @@ ul {
     align-self: center;
 
     &:not(:last-child)::after {
-    }
-
-    &:not(:last-child)::after {
       content: "";
       display: block;
-      margin: 2rem 0;
-      border-bottom: 1px solid rgb(44, 44, 44);
+      margin: 1.5rem 0;
+      border-bottom: 1px solid #3f434b;
     }
 
     span {

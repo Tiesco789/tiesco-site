@@ -9,22 +9,19 @@ export default defineComponent({
   methods: {
     downloadFile() {
       axios({
-        url: 'http://localhost:5173/public/storage/Franccesco-Bordon-CV.pdf',
+        url: '@/storage/Franccesco-Bordon-CV.pdf',
         method: 'GET',
         responseType: 'blob',
       })
         .then((response) => {
           const fileURL = window.URL.createObjectURL(new Blob([response.data]));
-
           const fileLink = document.createElement('a');
+
           fileLink.href = fileURL;
-
           fileLink.setAttribute('download', 'Franccesco-Bordon-CV.pdf');
-
           document.body.appendChild(fileLink);
 
           fileLink.click();
-
           document.body.removeChild(fileLink);
         })
         .catch((error) => {
@@ -55,8 +52,7 @@ export default defineComponent({
   <div class="header-container">
     <div class="links-container">
       <a target="_blank" class="link" :href="userData?.blog"><i class="ri-linkedin-fill"></i></a>
-      <a target="_blank" class="link" href=""><i class="ri-discord-fill"></i></a>
-      <a target="_blank" class="link" href="mailto:franccesco_@hotmail.com"><i class="ri-mail-send-fill"></i></a>
+      <a target="_blank" class="link" href="mailto:franccesco.bordon@gmail.com"><i class="ri-mail-send-fill"></i></a>
       <a target="_blank" class="link" :href="userData?.html_url"><i class="ri-github-fill"></i></a>
     </div>
 
@@ -74,10 +70,11 @@ $bg-btn-color: rgba(110, 89, 165, 0.06);
   justify-content: space-between;
   margin: 0 auto;
   padding: 1rem 2rem;
-  background-color: #171717;
-  border: 1px solid rgb(44, 44, 44);
+  border: 1px solid #3f434b;
   border-radius: .5rem;
   margin-bottom: 1rem;
+  backdrop-filter: blur(10px);
+
 
   .links-container {
     display: flex;
