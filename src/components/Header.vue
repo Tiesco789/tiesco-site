@@ -18,7 +18,7 @@ export default defineComponent({
           const fileLink = document.createElement('a');
 
           fileLink.href = fileURL;
-          fileLink.setAttribute('download', 'Franccesco-Bordon-CV.pdf');
+          fileLink.setAttribute('download', 'Franccesco-Bordon-CV-EN.pdf');
           document.body.appendChild(fileLink);
 
           fileLink.click();
