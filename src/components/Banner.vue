@@ -134,14 +134,14 @@ export default defineComponent({
   .bmc {
     grid-area: bmc;
 
-    a {
+    p {
+      color: white;
+      margin: 1rem 0;
 
-      img {
-        padding: .5rem 1rem;
-        background-color: #fae661;
-        height: 100%;
+      i {
+        margin-right: 1rem;
+        color: #7353c5;
         border-radius: .5rem;
-        height: 3.2rem;
       }
     }
   }
