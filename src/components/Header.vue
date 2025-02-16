@@ -9,7 +9,7 @@ export default defineComponent({
   methods: {
     downloadFile() {
       axios({
-        url: '@/storage/Franccesco-Bordon-CV.pdf',
+        url: '@/storage/Franccesco-Bordon-CV-EN.pdf',
         method: 'GET',
         responseType: 'blob',
       })
