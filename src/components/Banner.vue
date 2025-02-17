@@ -75,9 +75,9 @@
     </div>
 
     <div class="bmc banner-container">
-      <p><i class="ri-map-pin-line"></i>Brazil - São José dos Campos, SP</p>
-      <p><i class="ri-discord-fill"></i>Tiesco</p>
-      <a href=""></a>
+      <p><i class="ri-code-s-slash-fill"></i>Building robust applications with modern technologies</p>
+      <p><i class="ri-palette-line"></i>Creating beautiful and intuitive user interfaces</p>
+      <p><i class="ri-global-line"></i>Developing responsive and scalable web applications</p>
     </div>
   </div>
 </template>
@@ -136,11 +136,13 @@ export default defineComponent({
 
     p {
       color: white;
-      margin: 1rem 0;
+      margin: .5rem 0;
+      line-height: 1.8rem;
 
       i {
-        margin-right: 1rem;
-        color: #7353c5;
+        margin-right: .5rem;
+        background-color: #7353c5;
+        padding: 6px;
         border-radius: .5rem;
       }
     }
