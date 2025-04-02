@@ -119,5 +119,43 @@ $bg-btn-color: rgba(110, 89, 165, 0.06);
       font-size: 1.5rem;
     }
   }
+
+  // Breakpoint para tablets
+  @media (max-width: 768px) {
+    justify-content: center;
+
+    .links-container {
+      order: 2;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+
+    .btn-download {
+      order: 1;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  // Breakpoint para mobile pequeno
+  @media (max-width: 480px) {
+
+    .link {
+      padding: 8px 10px !important;
+
+      i {
+        font-size: 20px !important;
+      }
+    }
+
+    .btn-download {
+      padding: 8px 10px;
+      font-size: 0.8rem;
+
+      i {
+        font-size: 1rem !important;
+      }
+    }
+  }
 }
 </style>

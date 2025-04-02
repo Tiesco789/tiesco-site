@@ -39,7 +39,7 @@
         <div class="exp">
           <div>
             <h4>LogSmart</h4>
-            <small>August/2024 - Present</small>
+            <small>August/2024 - April/2025</small>
           </div>
           <p>Dev Full-Stack Jr</p>
         </div>
@@ -260,6 +260,85 @@ export default defineComponent({
       margin-left: 0.875rem;
       color: white;
       font-style: italic;
+    }
+  }
+
+  // Primeiro breakpoint para tablets grandes
+  @media only screen and (max-width: 1366px){
+    grid-template-areas:
+      "profile-pic texts repo-profile"
+      "skills form repo-profile"
+      "bmc form repo-profile";
+    grid-template-rows: auto auto auto; // Define linhas explícitas
+
+    .banner-container {
+      width: 100%;
+    }
+
+    .repo-profile {
+      margin-top: 1rem;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    grid-template-areas:
+      "profile-pic texts"
+      "skills form"
+      "bmc form"
+      "repo-profile repo-profile";
+    grid-template-columns: 1fr 1fr; // Duas colunas de largura igual
+
+    .banner-container {
+      height: auto;
+    }
+
+    .repo-profile {
+      margin-top: 1rem;
+    }
+  }
+
+  // Layout para dispositivos móveis
+  @media (max-width: 768px) {
+    grid-template-areas:
+      "profile-pic"
+      "texts"
+      "skills"
+      "form"
+      "bmc"
+      "repo-profile";
+    grid-template-columns: 1fr; // Apenas uma coluna
+    padding: 0.5rem;
+    font-size: 1rem !important;
+
+    .profile-pic {
+      flex-direction: column;
+      text-align: center;
+
+      .avatar {
+        margin-bottom: 1rem;
+        margin-right: 0;
+      }
+
+      span {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+    }
+
+    .skill-list {
+      justify-content: center;
+
+      li img {
+        width: 3rem !important;
+      }
+    }
+  }
+
+  // Estilos para telas muito pequenas
+  @media (max-width: 480px) {
+    .texts div {
+      font-size: 1rem !important;
+      line-height: 1.3rem !important;
     }
   }
 }

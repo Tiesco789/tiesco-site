@@ -7,10 +7,10 @@
 
 body {
   background: linear-gradient(-0.25turn, #1c1e22, #313641);
-  height: 100vh;
   display: flex;
   margin: 0 auto;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 }

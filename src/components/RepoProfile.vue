@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <h2>Some Projects</h2>
     <div v-if="loading">Carregando...</div>
     <div v-if="error" class="error">{{ error }}</div>
